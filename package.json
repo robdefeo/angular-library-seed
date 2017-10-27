@@ -3,7 +3,7 @@
   "version": "0.0.20",
   "description": "Angular library seed",
   "author": "Rob De Feo <robdefeo@gmail.com>",
-  "maintainers": [],
+  "contributors": [],
   "main": "./dist/index.umd.js",
   "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
