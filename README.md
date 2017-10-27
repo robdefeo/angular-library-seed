@@ -100,14 +100,17 @@ Install Yarn by following the [instructions](https://yarnpkg.com/en/docs/install
 - `brew install yarn` for Mac.
 
 ## Installing
+
 - `fork` this repository.
 - `clone` your fork to your local environment.
 - `yarn install` to install required dependencies (or `npm i`).
 
 ## Replace `TickTock` library with your own library
+
 This step may be optional at first since you might just want to play with existing library example.
 
 Once you're ready to develop your own library you should do the following.
+
 - Check and re-configure `package.json` fields like `name`, `version`, `keywords`, `description` etc. You may read about specifics of npm's [package.json handling](https://docs.npmjs.com/files/package.json) to do that.
 - Replace the content of `src` folder with your library sources. Your library must have `index.ts` file as an entry point for further building.
 - Update `demo` sources to make them consume your library in case if you want to keep the demo folder.
@@ -117,6 +120,7 @@ Once you're ready to develop your own library you should do the following.
 - `yarn build:watch` for building the library (both ESM and AOT versions) and watch for file changes.
 
 You may also build UMD bundle and ESM files separately:
+
 - `yarn build:esm` - for building AOT/JIT compatible versions of files.
 - `yarn build:esm:watch` - the same as previous command but in watch-mode.
 - `yarn build:umd` - for building UMD bundle only.
@@ -124,31 +128,38 @@ You may also build UMD bundle and ESM files separately:
 
 ## Other commands
 
-#### Lint the code
+### Lint the code
+
 - `yarn lint` for performing static code analysis.
 
-#### Test the library
+### Test the library
+
 - `yarn test` for running all your `*.spec.ts` tests once. Generated code coverage report may be found in `coverage` folder.
 - `yarn test:watch` for running all you `*.spec.ts` and watch for file changes.
 
-#### Generate documentation
+### Generate documentation
+
 - `yarn docs` for generating documentation locally.
 - `yarn gh-pages` for generating documentation and uploading it to GitHub Pages. [Documentation example](https://trekhleb.github.io/angular-library-seed/).
 
-#### Explore the bundle
+### Explore the bundle
+
 - `yarn explorer` to find out where all your code in bundle is coming from.
 
-#### Bump library version
+### Bump library version
+
 - `npm version patch` to increase library version. [More on bumping](https://docs.npmjs.com/cli/version).
 
 `preversion` script in this case will automatically run project testing and linting in prior in order to check that the library is ready for publishing.
 
-#### Publish library to NPM
+### Publish library to NPM
+
 - `npm publish` to publish your library sources on [npmjs.com](https://www.npmjs.com/). Once the library is published it will be [available for usage](https://www.npmjs.com/package/angular-library-seed) in npm packages.
 
 `prepublishOnly` script in this case will automatically run project testing and linting in prior in order to check that the library is ready for publishing.
 
 #### Cleaning
+
 - `yarn clean:tmp` command will clean up all temporary files like `docs`, `dist`, `coverage` etc.
 - `yarn clean:all` command will clean up all temporary files along with `node_modules` folder. 
 
@@ -167,8 +178,8 @@ You may take advantage of watch-modes for both library build and [demo-projects]
 
 To do so you need to:
 1. Open two console instances.
-2. Launch library build in watch mode in first console instance by running `yarn build:watch` (assuming that you're in `angular-library-seed` root folder).
-3. Launch demo project build (JIT version) in watch-mode by running `yarn start` in second console instance (assuming that you're in `angular-library-seed/demo` folder).
+1. Launch library build in watch mode in first console instance by running `yarn build:watch` (assuming that you're in the root folder).
+1. Launch parent project build (JIT version) in watch-mode by running `yarn start` in second console instance.
 
 As a result once you change library source code it will be automatically re-compiled and in turn your JIT demo-project will be automatically re-built and you will be able to see that changes in your browser instantly.
 
